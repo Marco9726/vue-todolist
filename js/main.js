@@ -38,15 +38,21 @@ createApp({
     },
     methods: {
         //creo il metodo per aggiungere todo alla lista
-        addTask(){
-            //aggiungi l'elemento newTask nellay list
-            this.list.push(this.newTask);
-            this.newTask = ''
+        addTask() {
+            //definisco un nuovo oggetto che avrà come proprietà 'text' newTask, ovvero il value inserito dell'utente nell'input
+            let newTodo = {
+                text: `${this.newTask}`,
+                done: true
+            }
+            //aggiungo l'oggetto appena creato newTodo nell'array list
+            this.list.push(newTodo);
+            this.newTask = ''  
         },
         //creo il metodo per rimuovere il todo
         removeTask(index){
             //rimuovi 1 elemento dall'array list in posizione index
             this.list.splice(index, 1);
         }
+
     }
 }).mount('#app')
