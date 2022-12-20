@@ -52,6 +52,16 @@ createApp({
         removeTask(index){
             //rimuovi 1 elemento dall'array list in posizione index
             this.list.splice(index, 1);
+        },
+        //creo il metodo per invertire il valore del done
+        invertDone(index){
+            let boolean = this.list[index].done
+            if(boolean === true){
+                boolean === false
+            }
+            else{
+                boolean === true
+            }
         }
 
     }
