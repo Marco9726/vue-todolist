@@ -11,17 +11,22 @@
     </head>
     <body>
         <div id="app">
+            <!-- container  -->
             <div class="container m-auto w-50 mt-5">
                 <div class="row w-100">
                     <div class="col-12">
                         <div id="todolist-container" class="rounded-3">
+                            <!-- card -->
                             <div class="card">
+                                <!-- header card  -->
                                 <div class="card-header text-center font">
                                     <h1>
                                         COSE DA FAR<i class="fa-solid fa-list-check"></i>
                                     </h1>
                                 </div>
+                                <!-- ul  -->
                                 <ul class="list-group list-group-flush">
+                                    <!-- ul generati con v-for  -->
                                     <li v-for="(item,index) in list" class="list-group-item p-4">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div :class="(item.done === false) ? 'text-decoration-line-through': ''">
@@ -29,6 +34,7 @@
 
                                             </div>                                                                               
                                             <div id="buttons">
+                                                <!-- bottone per eliminare al click il todo  -->
                                                 <button class="btn btn-square btn-danger">
                                                     <i class="fas fa-trash" @click="removeTask(index)"></i>
                                                 </button>
@@ -40,6 +46,17 @@
                         </div>
                     </div>
                 </div>
+                <!------------ prow che contiente l'input text ------->
+                <div class="row mt-3 w-100">
+                    <div class="col-12">
+                        <div class="d-flex w-100 justify-content-between">
+                            <!-- input per aggiungere le task  -->
+                            <input type="text" class="form-control-lg w-75" placeholder="inserisci nuovo task" v-model="newTask" @keyup.enter="addTask">
+                            <button class="btn btn-outline-primary" @click="addTask">inserisci</button>
+                        </div>
+                    </div>
+                </div>
+                <!---------------------->
             </div>
         </div>
         
