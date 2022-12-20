@@ -22,8 +22,18 @@
                                     </h1>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li v-for="item in list" class="list-group-item p-4" :class="(item.done === false) ? 'text-decoration-line-through': ''">
-                                        {{item.text}}
+                                    <li v-for="(item,index) in list" class="list-group-item p-4">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div :class="(item.done === false) ? 'text-decoration-line-through': ''">
+                                                {{item.text}}
+
+                                            </div>                                                                               
+                                            <div id="buttons">
+                                                <button class="btn btn-square btn-danger">
+                                                    <i class="fas fa-trash" @click="removeTask(index)"></i>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </li>
                                 </ul>
                               </div>

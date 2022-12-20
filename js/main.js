@@ -35,6 +35,10 @@ createApp({
         }
     },
     methods: {
-        
+        //creo il metodo per rimuovere il todo
+        removeTask(index){
+            //rimuovi 1 elemento dall'array list in posizione index
+            this.list.splice(index, 1);
+        }
     }
 }).mount('#app')
