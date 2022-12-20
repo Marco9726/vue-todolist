@@ -29,14 +29,14 @@
                                     <!-- ul generati con v-for  -->
                                     <li v-for="(item,index) in list" class="list-group-item p-4">
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <div :class="(item.done === false) ? 'text-decoration-line-through': ''" class="flex-grow-1 py-2" @click="invertDone(index)">
+                                            <div :class="(item.done === false) ? 'text-decoration-line-through': ''" class="flex-grow-1 py-2" @click="invertDone(item)">
                                                 {{item.text}}
 
                                             </div>                                                                               
                                             <div id="buttons">
                                                 <!-- bottone per eliminare al click il todo  -->
-                                                <button class="btn btn-square btn-danger">
-                                                    <i class="fas fa-trash" @click="removeTask(index)"></i>
+                                                <button class="btn btn-square btn-danger" @click="removeTask(index)">
+                                                    <i class="fas fa-trash"></i>
                                                 </button>
                                             </div>
                                         </div>

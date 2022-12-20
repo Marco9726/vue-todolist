@@ -54,13 +54,13 @@ createApp({
             this.list.splice(index, 1);
         },
         //creo il metodo per invertire il valore del done
-        invertDone(index){
-            let boolean = this.list[index].done
-            if(boolean === true){
-                boolean === false
+        invertDone(item){
+            //se la proprietà done dell'item è === true, diventa false e viceversa
+            if(item.done === true){
+                item.done = false
             }
             else{
-                boolean === true
+                item.done = true
             }
         }
 
