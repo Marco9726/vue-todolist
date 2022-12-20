@@ -22,7 +22,7 @@
                                     </h1>
                                 </div>
                                 <ul class="list-group list-group-flush">
-                                    <li v-for="item in list" class="list-group-item p-4">
+                                    <li v-for="item in list" class="list-group-item p-4" :class="(item.done === false) ? 'text-decoration-line-through': ''">
                                         {{item.text}}
                                     </li>
                                 </ul>
