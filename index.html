@@ -11,7 +11,26 @@
     </head>
     <body>
         <div id="app">
-            
+            <div class="container m-auto w-50 mt-5">
+                <div class="row w-100">
+                    <div class="col-12">
+                        <div id="todolist-container" class="rounded-3">
+                            <div class="card">
+                                <div class="card-header text-center font">
+                                    <h1>
+                                        COSE DA FAR<i class="fa-solid fa-list-check"></i>
+                                    </h1>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li v-for="item in list" class="list-group-item p-4">
+                                        {{item.text}}
+                                    </li>
+                                </ul>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
